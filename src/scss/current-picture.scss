@@ -1,0 +1,11 @@
+.current-picture {
+  min-width: 900px;
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    width: 80%;
+    height: 80%;
+    box-shadow: $primaryBacklightBoxShadow $colorBlack;
+  }
+}

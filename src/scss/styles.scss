@@ -1,0 +1,30 @@
+@import './variables.scss';
+@import './carousel.scss';
+@import './buttons.scss';
+@import './current-picture.scss';
+@import './dividing-line.scss';
+@import './gallery.scss';
+
+body {
+  background-color: $colorLightGrey;
+}
+
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.container {
+  padding: $containerPadding;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.active {
+  box-shadow: $currentBacklightBoxShadow $colorLightPurpleBlue;
+}

@@ -1,0 +1,21 @@
+.carousel {
+  width: 900px;
+  min-width: 900px;
+  overflow: hidden;
+
+  min-width: $galleryWidth;
+  border: solid 2px $colorBlack;
+
+  &__list {
+    height: 490px;
+    display: flex;
+    align-items: center;
+    color: $colorWhite;
+
+    font-size: $countZero;
+    margin: $countZero;
+    padding: $countZero;
+    list-style: none;
+    transition: margin-left 250ms ease 0s;
+  }
+}

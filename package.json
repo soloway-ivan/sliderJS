@@ -1,0 +1,29 @@
+{
+  "name": "slider_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soloway-ivan/slider_js.git"
+  },
+  "keywords": [
+    "sli"
+  ],
+  "author": "solovei ivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soloway-ivan/slider_js/issues"
+  },
+  "homepage": "https://github.com/soloway-ivan/slider_js#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}

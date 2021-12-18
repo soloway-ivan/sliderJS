@@ -1,0 +1,35 @@
+.button {
+  border-radius: 50%;
+  border: $colorWhite;
+  color: $colorWhite;
+  background-color: $colorShadeOfCyanBlue;
+  cursor: pointer;
+
+  &-left {
+  padding: $buttonLeftPadding;
+  }
+
+  &-right {
+  padding: $buttonRightPadding;
+  }
+
+  &__arrow-left {
+    border: solid $colorWhite;
+    border-width: $buttonArrowBorderW;
+    display: inline-block;
+    padding: $buttonArrowPadding;
+    transform: rotate(135deg);
+  }
+
+  &__arrow-right {
+    border: solid $colorWhite;
+    border-width: $buttonArrowBorderW;
+    display: inline-block;
+    padding: $buttonArrowPadding;
+    transform: rotate(-45deg);
+  }
+
+  &:hover {
+    transform: scale(0.9);
+  }
+}
