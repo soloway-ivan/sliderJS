@@ -2,9 +2,9 @@ import { selectDOMElement } from "./utils.js";
 import { constants } from "./constants.js";
 import { gallery } from "./gallery.js";
 
-const choosePhoto = (() => {
-  const galleryList = selectDOMElement('#photo-list');
-  let step = constants.initialIndexOfStep;
+const galleryList = ((initialStep) => {
+  const photoList = selectDOMElement('#photo-list');
+  let step = initialStep;
   let stepChangeCB = () => {};
 
   const getCurrentStep = () => {
@@ -15,7 +15,7 @@ const choosePhoto = (() => {
     stepChangeCB = cb
   }
 
-  for (let i = 0; i <= galleryList.children.length - 1;) {
+  for (let i = 0; i <= photoList.children.length - 1;) {
     let wrapperImg = selectDOMElement(`[data-photo-gallery="${i}"]`)
     wrapperImg.firstElementChild.dataset.photoGalleryImgId = i;
 
@@ -28,12 +28,12 @@ const choosePhoto = (() => {
   }
 
   const updatePicture = () => {
-    for (let slide = 0; slide <= galleryList.children.length - 1;) {
+    for (let slide = 0; slide <= photoList.children.length - 1;) {
       let galleryImg = selectDOMElement(`[data-photo-gallery-img-id="${slide}"]`)
 
       galleryImg.addEventListener('click', () => {
         step = galleryImg.dataset.photoGalleryImgId
-        stepChangeCB();
+        stepChangeCB(step);
       })
       slide++;
     }
@@ -44,6 +44,6 @@ const choosePhoto = (() => {
     updatePicture,
     getCurrentStep
   }
-})()
+})();
 
-export { choosePhoto }
+export { galleryList }

@@ -22,8 +22,8 @@ const backlight = (() => {
     galleryImg.classList.add('active')
   }
 
-  const setDefaultBacklight = () => {
-    getGalleryImg(constants.initialIndexOfStep)
+  const setDefaultBacklight = (currentStep) => {
+    getGalleryImg(currentStep)
     galleryImg.classList.add('active')
   }
 

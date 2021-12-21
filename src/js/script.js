@@ -1,18 +1,19 @@
 import { constants } from "./constants.js";
 import { gallery } from "./gallery.js";
-import { choosePhoto } from "./gallery-list.js";
+import { galleryList } from "./gallery-list.js";
 import { backlight } from "./backlight.js";
 import { createSlider } from "./slider.js";
 import { selectDOMElement } from "./utils.js";
 
+// 
 const stepController = (() => {
   const slider = createSlider(gallery, constants.initialIndexOfStep, selectDOMElement);
 
   const carouselList = selectDOMElement('#carousel-list')
   let currentStep = constants.initialIndexOfStep;
 
-  backlight.setDefaultBacklight()
-  choosePhoto.updatePicture()
+  backlight.setDefaultBacklight(currentStep)
+  galleryList.updatePicture()
 
   slider.onStepUpdate((operationType) => {
     if (operationType === 'increment') {
@@ -28,23 +29,16 @@ const stepController = (() => {
         currentStep = 0
       }
     }
-    updateSlider(currentStep)
-    updateBacklight(currentStep)
+    update(currentStep)
   })
 
-  choosePhoto.setCurrentStep(() => {
-    currentStep = choosePhoto.getCurrentStep()
-    updateSlider(currentStep)
-    updateBacklight(currentStep)
+  galleryList.setCurrentStep((step) => {
+    currentStep = step;
+    update(currentStep)
   })
 
-  const updateSlider = (currentStep) => {
+  const update = (currentStep) => {
     slider.choosePicture(currentStep)
-  }
-
-  const updateBacklight = (currentStep) => {
     backlight.getActive(currentStep)
   }
 })();
-
-export { stepController };
