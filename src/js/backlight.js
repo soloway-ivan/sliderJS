@@ -1,5 +1,4 @@
 import { selectDOMElement } from "./utils.js";
-import { constants } from "./constants.js";
 
 const backlight = (() => {
   let galleryImg;

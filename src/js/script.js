@@ -5,7 +5,6 @@ import { backlight } from "./backlight.js";
 import { createSlider } from "./slider.js";
 import { selectDOMElement } from "./utils.js";
 
-// 
 const stepController = (() => {
   const slider = createSlider(gallery, constants.initialIndexOfStep, selectDOMElement);
 
